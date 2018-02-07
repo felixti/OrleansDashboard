@@ -16,7 +16,11 @@ namespace TestHost
         {
             var configuration =
                 ClusterConfiguration.LocalhostPrimarySilo(33333)
+                    .AddPerfCountersTelemetryConsumer("")
                     .RegisterDashboard();
+
+            configuration.Defaults.StatisticsMetricsTableWriteInterval = TimeSpan.FromSeconds(15);
+            configuration.Defaults.StatisticsPerfCountersWriteInterval = TimeSpan.FromSeconds(15);
 
             var silo =
                 new SiloHostBuilder()
@@ -29,6 +33,7 @@ namespace TestHost
                     .ConfigureApplicationParts(appParts => appParts.AddApplicationPart(typeof(TestCalls).Assembly))
                     .ConfigureLogging(builder =>
                     {
+                        builder.AddFilter("Orleans.Runtime.SiloControl", LogLevel.Warning);
                         builder.AddConsole();
                     })
                     .Build();

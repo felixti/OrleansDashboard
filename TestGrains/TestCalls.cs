@@ -29,7 +29,7 @@ namespace TestGrains
                 {
                     try
                     {
-                        var testGrain = client.GetGrain<ITestGrain>(random.Next(500));
+                        var testGrain = client.GetGrain<ITestGrain>(random.Next(25));
 
                         await testGrain.ExampleMethod1();
                         await testGrain.ExampleMethod2();

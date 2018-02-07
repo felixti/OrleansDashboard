@@ -1,5 +1,6 @@
 <Project>
   <PropertyGroup>
     <OrleansPackageVersion Condition=" '$(OrleansPackageVersion)'=='' ">2.0.0-beta3</OrleansPackageVersion>
+      <MicrosoftApplicationInsightsVersion Condition=" '$(MicrosoftApplicationInsightsVersion)'=='' ">2.4.0</MicrosoftApplicationInsightsVersion>
   </PropertyGroup>
 </Project>

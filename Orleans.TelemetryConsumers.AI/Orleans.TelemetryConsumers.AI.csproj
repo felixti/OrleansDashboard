@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="$(MicrosoftApplicationInsightsVersion)" />
+    <PackageReference Include="Microsoft.Orleans.Core" Version="$(OrleansPackageVersion)" />
+  </ItemGroup>
+</Project>
